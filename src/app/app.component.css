@@ -1,0 +1,20 @@
+.ui.secondary.pointing.menu .active.item {
+  background-color: rgb(237, 237, 237);
+  box-shadow: none;
+  border-color: rgb(84, 200, 255);
+  font-weight: bold;
+  color: rgb(84, 200, 255);
+}
+
+.ui.secondary.pointing.menu {
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+  align-items: center;
+}
+
+i.icon, i.icons {
+  font-size: 5em;
+  display: ruby-base-container;
+  color: rgb(33, 133, 208);
+}

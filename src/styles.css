@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~semantic-ui-css/semantic.css';
+
+
+.ui.icon.header .icon {
+  float: none;
+  display: block;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  padding: 0;
+  font-size: 3em;
+  margin: 0 auto 0.5rem;
+  opacity: 1;
+  color: rgb(33, 133, 208) !important;
+}
+
+.ui.placeholder .header {
+  position: relative;
+  overflow: hidden;
+  color: rgb(33, 133, 208);
+}
