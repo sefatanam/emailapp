@@ -8,7 +8,7 @@ import {EmailService} from "../services/email.service";
   styleUrls: ['./reply.component.css']
 })
 export class ReplyComponent implements OnChanges {
-  showModal: false;
+  showModal: boolean;
   @Input() email: IEmail;
 
   constructor(private emailService: EmailService) {
