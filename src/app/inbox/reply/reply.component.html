@@ -1,4 +1,4 @@
-<button class="ui button primary" (click)="showModal = true">Replay</button>
+<button class="ui button primary" (click)="showModal = true">Reply</button>
 <app-modal *ngIf="showModal" (dismiss)="showModal=false">
   <div modalTitle>Reply</div>
   <app-form [email]="email" (emailSubmit)="onSubmit($event)"></app-form>
