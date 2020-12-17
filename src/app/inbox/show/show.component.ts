@@ -16,7 +16,7 @@ export class ShowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // THIS IS HEAVY BRO !! 🤵🤵
+    // THIS IS HEAVY BRO !! 🤵
     /* this.route.params.subscribe(({id}) => {
        this.emailService.getEmail(id).subscribe(email => {
          console.log(email);

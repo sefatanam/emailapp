@@ -1,20 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {IEmail} from "../interfaces/iemail";
+import {IEmailSummary} from "../interfaces/iemail-summary";
 
-interface IEmailSummary {
-  id: string;
-  subject: string;
-  from: string;
-}
-
-interface IEmail {
-  id: string;
-  subject: string;
-  text: string;
-  to: string;
-  from: string;
-  html: string;
-}
 
 @Injectable({
   providedIn: 'root'
