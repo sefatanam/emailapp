@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {IEmail} from "../interfaces/iemail";
 import {EmailService} from "../services/email.service";
 
@@ -7,14 +7,14 @@ import {EmailService} from "../services/email.service";
   templateUrl: './reply.component.html',
   styleUrls: ['./reply.component.css']
 })
-export class ReplyComponent implements OnInit {
+export class ReplyComponent implements OnChanges {
   showModal: false;
   @Input() email: IEmail;
 
   constructor(private emailService: EmailService) {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     const text = this.email.text.replace(/\n/gi, '\n> ');
     this.email = {
       ...this.email,
