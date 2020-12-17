@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {tap} from "rxjs/operators";
+import {filter, tap} from "rxjs/operators";
 
 
 @Injectable()
@@ -16,14 +16,9 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     });
     return next.handle(modifiedReq)
       .pipe(
-        tap((values) => {
-          if (values.type === HttpEventType.Sent) {
-            console.log('Request was sent to server');
-          }
-
-          if (values.type === HttpEventType.Response) {
-            console.log('Got a response from API');
-          }
+        filter(value => value.type === HttpEventType.Sent),
+        tap(val => {
+          console.log('Request Send');
         })
       );
   }
