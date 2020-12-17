@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {MatchPassword} from "../validators/match-password";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-signin',
@@ -9,10 +9,37 @@ import {MatchPassword} from "../validators/match-password";
 })
 export class SigninComponent implements OnInit {
 
-  constructor() {
+  authForm = new FormGroup({
+    username: new FormControl('',
+      [Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20),
+        Validators.pattern(/^[a-z0-9]+$/)]),
+    password: new FormControl('',
+      [Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(20)]),
+  });
+
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    if (this.authForm.invalid) {
+      return;
+    }
+
+    this.authService.signin(this.authForm.value).subscribe({
+      next: () => {
+      },
+      error: (errorResponse) => {
+        if (errorResponse.error.username || errorResponse.error.password) {
+          this.authForm.setErrors({credentials: true});
+        }
+      }
+    });
+  }
 }

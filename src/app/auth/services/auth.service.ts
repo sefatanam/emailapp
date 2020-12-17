@@ -14,7 +14,17 @@ interface ISignupCredentials {
   passwordConfirmation: string;
 }
 
+interface ISigninCredentials {
+  username: string;
+  password: string;
+}
+
 interface ISignupResponse {
+  username: string;
+}
+
+interface ISignedinResponse {
+  authenticated: boolean;
   username: string;
 }
 
@@ -43,12 +53,29 @@ export class AuthService {
   }
 
   checkAuth() {
-    return this.http.get(`${this.rootUrl}/auth/signedin`)
+    return this.http.get<ISignedinResponse>(`${this.rootUrl}/auth/signedin`)
       .pipe(
-        tap((response) => {
-          console.log(response);
+        tap(({authenticated}) => {
+          this.isSignedIn$.next(authenticated);
         })
       );
   }
 
+  signout() {
+    return this.http.post(`${this.rootUrl}/auth/signout`, {})
+      .pipe(
+        tap(() => {
+          this.isSignedIn$.next(false);
+        })
+      );
+  }
+
+  signin(credentials: ISigninCredentials) {
+    return this.http.post(`${this.rootUrl}/auth/signin`, credentials)
+      .pipe(
+        tap(() => {
+          this.isSignedIn$.next(true);
+        })
+      );
+  }
 }
