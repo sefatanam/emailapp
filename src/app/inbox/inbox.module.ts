@@ -7,10 +7,11 @@ import { CreateComponent } from './create/create.component';
 import { IndexComponent } from './index/index.component';
 import { ReplyComponent } from './reply/reply.component';
 import { ShowComponent } from './show/show.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, CreateComponent, IndexComponent, ReplyComponent, ShowComponent],
+  declarations: [HomeComponent, CreateComponent, IndexComponent, ReplyComponent, ShowComponent, PlaceholderComponent],
   imports: [
     CommonModule,
     InboxRoutingModule
