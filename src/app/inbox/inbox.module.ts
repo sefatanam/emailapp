@@ -8,10 +8,11 @@ import { IndexComponent } from './index/index.component';
 import { ReplyComponent } from './reply/reply.component';
 import { ShowComponent } from './show/show.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, CreateComponent, IndexComponent, ReplyComponent, ShowComponent, PlaceholderComponent],
+  declarations: [HomeComponent, CreateComponent, IndexComponent, ReplyComponent, ShowComponent, PlaceholderComponent, NotFoundComponent],
   imports: [
     CommonModule,
     InboxRoutingModule
