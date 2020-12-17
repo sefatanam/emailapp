@@ -21,8 +21,16 @@
   color: rgb(33, 133, 208);
 }
 
+.ui.inverted.primary.buttons .button, .ui.inverted.primary.button {
+  background-color: transparent;
+  box-shadow: 0 0 0 2px #54C8FF inset !important;
+  color: #54C8FF;
+  margin-bottom: 2rem;
+}
+
 @media only screen and (max-width: 600px) {
   .ui.icon.header .icon {
     font-size: 2em !important;
   }
 }
+
