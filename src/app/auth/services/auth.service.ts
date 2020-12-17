@@ -31,7 +31,7 @@ export class AuthService {
   usernameAvailable(username: string): any {
     return this.http.post<IUsernameAvailableResponse>(`${this.rootUrl}/auth/username`, {
       username
-    }, {withCredentials: true});
+    });
   }
 
   signup(credentials: ISignupCredentials): any {
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   checkAuth() {
-    return this.http.get(`${this.rootUrl}/auth/signedin`, {withCredentials: true})
+    return this.http.get(`${this.rootUrl}/auth/signedin`)
       .pipe(
         tap((response) => {
           console.log(response);
