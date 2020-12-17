@@ -7,14 +7,30 @@
 }
 
 .ui.secondary.pointing.menu {
-  margin-left: 0;
-  margin-right: 0;
   border-bottom: 2px solid rgba(34, 36, 38, 0.15);
   align-items: center;
 }
 
 i.icon, i.icons {
   font-size: 5em;
-  display: ruby-base-container;
+  display: table-footer-group;
   color: rgb(33, 133, 208);
+}
+
+.email {
+  font-size: 4rem !important;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  i.icon, i.icons {
+    font-size: 3em !important;
+  }
+
+  .email {
+    font-size: 2rem !important;
+    margin: 0;
+    padding: 0;
+  }
 }

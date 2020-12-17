@@ -1,10 +1,11 @@
 <div class="ui container">
   <div class="ui secondary pointing menu">
+
     <div class="ui icon">
       <i class="paper plane outline icon"></i>
     </div>
 
-    <a routerLink="/" class="item" style="font-size: 3rem"> Email </a>
+    <a routerLink="/" class="item email"> Email </a>
 
     <div class="right menu">
       <ng-container *ngIf="isSignedIn$ | async">
@@ -19,7 +20,9 @@
           Up</a>
       </ng-container>
     </div>
+
   </div>
+
   <router-outlet></router-outlet>
 </div>
 
